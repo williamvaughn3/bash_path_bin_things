@@ -1,5 +1,5 @@
 #!/bin/bash
-# conversatoin tickled up by S.F.
+# inspired by conversatoin tickled up by S.F.
 export IYellow='\033[0;93m'      # Yellow
 export IBlue='\033[0;94m'        # Blue
 export IPurple='\033[0;95m'      # Purple
