@@ -20,3 +20,10 @@ Simple Execution to validate binaries, hashes, and the execution path.
  Executable:  /bin/python  
   
   /bin/python does not exist in the context of the environment and path  
+
+
+# Check Bin Dir
+
+    Usage: $0 <dir of bins>
+    Example: $0 /bin/
+    Example2: $0 /usr/bin/ /usr/bin/.local/ /bin/
