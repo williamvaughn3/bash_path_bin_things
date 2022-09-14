@@ -1,0 +1,32 @@
+#!/bin/bash 
+export Color_Off='\033[0m'       
+export IBlue='\033[0;94m'       
+
+
+function example(){
+printf "
+${IBlue}
+    Usage: $0 [space seperated list of file extensions]
+    Example: $0 pdf
+    Example2: $0 pdf txt sh ps1 py docx doc pptx ppt odt ods odp
+${Color_Off}
+"
+}
+
+if [ $# -eq 0 ]; then
+    example
+    exit 1
+    elif [[ $1 == "-h"* || $1 == "--h"* ]]; then
+    example
+    exit 1
+fi
+
+extension=$@
+
+if [ ! -d /tmp/search/]; then mkdir /tmp/search/; fi
+for i in $extension; do
+find . -type f -name "*.$extension" -exec sh -c '
+    for name do
+        rsync -av "$name" /tmp/search/"$name"
+    done' sh {} +
+done
